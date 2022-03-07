@@ -1,0 +1,32 @@
+.single-task {
+    width: 600px;
+    height: 37px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 10px;
+    margin-bottom: 7px;
+}
+
+.single-task .action {
+    display: flex;
+}
+
+.single-task .action .tick,
+.single-task .action .delete {
+    width: 37px;
+    height: 37px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.single-task .action .tick {
+    background: #26de81;
+}
+
+.single-task .action .delete {
+    background: #fc5c65;
+}

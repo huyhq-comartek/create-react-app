@@ -1,0 +1,60 @@
+#input {
+    display: flex;
+    margin-bottom: 60px;
+}
+
+#input-text {
+    position: relative;
+    margin-right: 30px;
+}
+
+#input-text input {
+    width: 325px;
+    height: 37px;
+    outline: none;
+    border: none;
+    padding: 10px;
+    padding-left: 25px;
+    padding-right: 40px;
+}
+
+#input-text input:focus {
+    box-shadow: 0 0 10px #fc5c65;
+}
+
+#plus-icon {
+    position: absolute;
+    top: 3px;
+    right: 7px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #fa8231;
+}
+
+#list-item {
+    display: none;
+}
+
+#selected-item {
+    width: 150px;
+    height: 37px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 15px;
+}
+
+#selected-item span {
+    display: block;
+}
+
+#selected-item .toggle-down {
+    width: 37px;
+    height: 37px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background: #fa8231;
+}
