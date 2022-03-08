@@ -5,14 +5,30 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-left: 10px;
-    margin-bottom: 7px;
+    margin-bottom: 10px;
+}
+
+.single-task .task-name {
+    flex: 1;
+    height: 100%;
+    border: none;
+    background: #fff;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-right: 10px;
+    outline: none;
+}
+
+.deleted-text {
+    text-decoration: line-through;
 }
 
 .single-task .action {
     display: flex;
 }
 
+.single-task .action .save,
+.single-task .action .edit,
 .single-task .action .tick,
 .single-task .action .delete {
     width: 37px;
@@ -22,6 +38,15 @@
     align-items: center;
     color: #fff;
     cursor: pointer;
+}
+
+.single-task .action .save {
+    background: #183153;
+    color: #ffd43b;
+}
+
+.single-task .action .edit {
+    background: #8395a7;
 }
 
 .single-task .action .tick {

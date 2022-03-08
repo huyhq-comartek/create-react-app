@@ -7,18 +7,21 @@ import SingleTask from './singleTask';
 import {useState} from 'react';
 
 function Layout() {
-  // useState 
-  const [txts, setTxts] = useState([]);
-  const [txt, setTxt] = useState('');
 
-  function handleDelete(index){
-    setTxts((prev)=>{
-      const newTxts=[...prev];
-      newTxts.splice(index, 1);
-      return newTxts;
+  // useState 
+  const [texts, setTexts] = useState([]);
+  const [txt, setTxt] = useState('');
+  const [edit, saveEdit] = useState({
+    index: null,
+  })
+
+  // Delete task
+  function handleDelete(index) {
+    setTexts((prev) => {
+      const newTexts=[...prev];
+      newTexts.splice(index, 1);
+      return newTexts;
     })
-    console.log(txts);
-    //
   }
 
   // handle submit 
@@ -34,10 +37,21 @@ function Layout() {
 
   // add task
   function addTask() {
-    const newtexts = [...txts, txt]
-    setTxts(newtexts)
+    const newTexts = [...texts, txt]
+    setTexts(newTexts)
   }
 
+  // Update 
+  const Update = (e, updatedName, index) => {
+    e.preventDefault()
+    setTexts((prev) => {
+      const newTexts=[...prev];
+      newTexts.splice(index, 1, updatedName);
+      return newTexts;
+    })
+  }
+
+  // Render
   return (
     <div id="layout">
       <header>To-Do List</header>
@@ -65,7 +79,19 @@ function Layout() {
         </div>
       </div>
 
-      {txts.map((t, index) => <SingleTask name={t} handleDelete={handleDelete} key={index} index={index}/>)}
+      {texts.map((t, index) => {
+        console.log(t);
+        return <SingleTask 
+        name = {t} 
+        handleDelete = {handleDelete} 
+        key = {index} 
+        index = {index}
+        handleUpdate = {Update}
+      />
+        
+        }
+      )}
+  
     </div>
   );
 }
